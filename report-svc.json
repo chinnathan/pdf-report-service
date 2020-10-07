@@ -1,0 +1,16 @@
+{
+    "_comment1": "This json file is used for starting report service via PM2.",
+    "_comment2": "PM2 is a daemon process manager that will help you manage and keep your application online.",
+    "apps": [
+        {
+            "name": "report-service",
+            "script": "src/main.js",
+            "instances": 4,
+            "exec_mode": "cluster",
+            "watch": true,
+            "instance_var": "INSTANCE_ID",
+            "env": { "PORT": 3003, "NODE_ENV": "dev" },
+            "cwd": "/git/opensource-software/chinnathan-report-service"
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+{
+  "name": "chinnathan-report-service",
+  "version": "1.0.0",
+  "description": "chinnathan-report-service is a fast, robust, dynamic engine. It is designed as Rest APIs to interoperate with other parts of chinnathan software.",
+  "main": "src/main.js",
+  "scripts": {
+    "debug": "NODE_ENV=dev nodemon --ignore './tests/' --nolazy --inspect=0.0.0.0:9229 src/main.js",
+    "start": "NODE_ENV=dev pm2 start src/main.js",
+    "start_test": "NODE_ENV=test pm2 start report-svc.json -u chinnathan",
+    "start_prod": "NODE_ENV=prod pm2 start report-svc.json -u chinnathan",
+    "stop": "pm2 stop all",
+    "test": "NODE_ENV=unit-test node_modules/.bin/jest --watchAll --coverage --collectCoverageFrom=src/**/*.{js,jsx}"
+  },
+  "keywords": [
+    "koa",
+    "pino",
+    "report",
+    "puppeteer",
+    "handlebars"
+  ],
+  "author": "Chinnathan Chongsujiphan",
+  "license": "MIT License",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "base64-img": "^1.0.4",
+    "dotenv": "^8.2.0",
+    "handlebars": "^4.7.6",
+    "koa": "^2.11.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-respond": "^2.1.0",
+    "koa-router": "^8.0.8",
+    "pino": "^6.2.0",
+    "puppeteer": "^3.0.1",
+    "uuid": "^8.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}

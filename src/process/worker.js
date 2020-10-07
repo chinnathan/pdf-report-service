@@ -1,0 +1,1 @@
+// the logical worker is designed to handling the render process simultaneous.
